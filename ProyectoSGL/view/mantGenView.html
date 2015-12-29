@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<title>:: INICIO ::</title>
+   <link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="../css/classic_blue2.css" rel="stylesheet" type="text/css">
+<link href="css/style2.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/login.css" type="text/css">
+<link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Open+Sans'>
+</head>
+<body>
+<div id="DivMantGen">
+<table width="390" border="0" cellpadding="1" cellspacing="1"
+	class="tabformat">
+	
+	<tr>
+		<td width="100%">
+		<div class="caption2">
+		<p align="center">Mantenimiento de Usuario</p>
+		</div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<table class="tabformat" border="0" cellpadding="1" cellspacing="1"
+			width="109%">
+			<tr>
+				<td width="40%" class="tabdata1">Id:</td>
+				<td width="60%" class="tabdata1">
+					<input name="txt_codigo" id="txt_codigo" class="form1" size="10" maxlength="5" value="" onkeypress="validaEnterUsuario('codigo',event);" />
+					<input type="hidden" name="hdn_operacion" id="hdn_operacion" value="" />
+					<input type="hidden" name="hdn_codigo" id="hdn_codigo" />
+					<input name="hd_error"	id="hd_error" type="hidden" value="">
+					<input name="hd_sec" id="hd_sec" type="hidden"	value="">
+					<input name="hd_variable" id="hd_variable" type="hidden" value="" />
+			  </td>
+			</tr>
+			<tr>
+				<td class="tabdata1">Nombres:</td>
+				<td class="tabdata1"><input name="txt_nombre" type="text"
+					id="txt_nombre" class="form1" value="" onkeypress="validaEnterUsuario('nombre',event);" /></td>
+			</tr>
+			<tr>
+				<td class="tabdata1">Apellidos:</td>
+				<td class="tabdata1"><input name="txt_apellido" type="text"
+					id="txt_apellido" class="form1" value="" onkeypress="validaEnterUsuario('apellido',event);" /></td>
+			</tr>
+			<tr>
+				<td class="tabdata1">Permisos:</td>
+				<td class="tabdata1"><select name="cbx_permiso" id="cbx_permiso"
+					class="form1">
+					<? while ($row = $this->rsCombo1->fetch()){
+						if ($row['grp_id'] == $this->permiso){
+							?>
+					<option value="" selected></option>
+					<? }else{?>
+					<option value=""></option>
+					<? 		}//end if
+					}//end while?>
+				</select></td>
+			</tr>
+			<tr>
+				<td class="tabdata1">Privilegio:</td>
+				<td class="tabdata1"><select name="cbx_privilegio"
+					id="cbx_privilegio" class="form1">
+					<? while ($row = $this->rsCombo2->fetch()){
+						if ($row['prv_id'] == $this->privilegio){
+							?>
+					<option value="" selected></option>
+					<? }else{?>
+					<option value=""></option>
+					<? 		}//end if
+					}//end while?>
+				</select></td>
+			</tr>
+			<tr>
+				<td class="tabdata1">Cargo:</td>
+				<td class="tabdata1"><select name="cbx_cargo" id="cbx_cargo"
+					class="form1">
+					<? while ($row = $this->rsCombo3->fetch()){
+						if ($row['cargo_id'] == $this->cargo){
+							?>
+					<option value="" selected></option>
+					<? }else{?>
+					<option value=""></option>
+					<? 		}//end if
+					}//end while?>
+				</select></td>
+			</tr>
+			<tr>
+				<td class="tabdata1">Departamento:</td>
+				<td class="tabdata1"><select name="cbx_dpto" id="cbx_dpto"
+					class="form1">
+					<? while ($row = $this->rsCombo4->fetch()){
+						if ($row['dpto_id'] == $this->dpto){
+							?>
+					<option value="" selected></option>
+					<? }else{?>
+					<option value=""></option>
+					<? 		}//end if
+					}//end while?>
+				</select></td>
+			</tr>
+			<tr>
+				<td class="tabdata1">Bodega:</td>
+				<td class="tabdata1"><select name="cbx_local" id="cbx_local"
+					class="form1">
+					<? while ($row = $this->rsCombo5->fetch()){
+						if ($row['f001_local'] == $this->local){
+							?>
+					<option value="" selected></option>
+					<? }else{?>
+					<option value=""></option>
+					<? 		}//end if
+					}//end while?>
+				</select></td>
+			</tr>
+			<tr>
+				<td class="tabdata1">Cedula</td>
+				<td class="tabdata1"><input name="txt_cedula" type="text"
+					class="form1" id="txt_cedula"
+					onkeypress="validaEnterUsuario('cedula',event);return validaNumero(this,event);" 
+					value="" maxlength="10" /></td>
+			</tr>
+			<tr>
+				<td class="tabdata1">Last login:</td>
+				<td class="tabdata1"><input name="txt_login" type="text"
+					id="txt_login" class="form1" disabled="disabled"
+					value="" /></td>
+			</tr>
+			<tr>
+				<td class="tabdata1">Cambiar clave:</td>
+				<td class="tabdata1"><select name="cbx_clave" id="cbx_clave"
+					class="form1">
+					<? while ($row = $this->rsCombo6->fetch()){
+						if ($row['clav_id'] == $this->clave2){
+							?>
+					<option value="" selected></option>
+					<? }else{?>
+					<option value=""></option>
+					<? 		}//end if
+					}//end while?>
+				</select></td>
+			</tr>
+			<tr>
+				<td class="tabdata1">Fecha de creacion:</td>
+				<td class="tabdata1"><input name="txt_fecha" type="text"
+					id="txt_fecha" class="form1" disabled="disabled"
+					value="" /></td>
+			</tr>
+			<tr>
+				<td class="tabdata1">Fecha de Modificacion:</td>
+				<td class="tabdata1"><input name="txt_fecha2" type="text"
+					id="txt_fecha2" class="form1" disabled="disabled"
+					value="" /></td>
+			</tr>
+		</table>
+	
+	</tr>
+	<tr>
+		<td>
+		<div id="div_detalle">
+		<table width="105%" align="center">
+			<tr>
+				<td width="14%" class="">
+				<div align="center"><img src="../images/icons/menu_01.gif"
+					width="33" height="29" /></div>
+				</td>
+				<td width="17%" class="">
+				<div align="center"><img src="../images/icons/menu_03.gif"
+					width="43" height="31" /></div>
+				</td>
+				<td width="19%" class="">
+				<div align="center"><img src="../images/icons/menu_05.gif"
+					width="47" height="31" /></div>
+				</td>
+				<td width="18%" class="">
+				<div align="center"><img src="../images/icons/menu_07.gif"
+					width="50" height="29" /></div>
+				</td>
+				<td width="32%" class="">
+				<div align="center"><img src="../images/icons/menu_09.gif"
+					width="50" height="29" /></div>
+				</td>
+				<td width="5%" class="">
+				<div align="center"><img src="../images/icons/menu_09.gif"
+					width="50" height="29" /></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="">
+				<div align="center"><input name="btn_nuevo" type="button"
+					id="btn_nuevo" value="Nuevo" class="info" onClick="nuevo();" /></div>
+				</td>
+				<td class="">
+				<div align="center"><input name="btn_ingresar" type="button"
+					id="btn_ingresar" value="Guardar" class="info"
+					onClick="validar('ingresar');" /></div>
+				</td>
+				<td class="">
+				<div align="center"><input name="btn_consultar" type="button"
+					id="btn_consultar" value="Consultar" class="info"
+					onclick="consultar();" /></div>
+				</td>
+				<td class="">
+				<div align="center"><input name="btn_modificar" type="button"
+					id="btn_modificar" value="Modificar" class="info"
+					onclick="validar('modificar');" disabled="disabled" /></div>
+				</td>
+				<td class="">
+				<div align="center"><input name="btn_consulta_general" type="button"
+					id="btn_consulta_general" value="Consulta General" class="info"
+					onclick="consulta_general();" /></div>
+				</td>
+				<td class="">
+				<div align="center"><input name="btn_reestablece_clave" type="button"
+					id="btn_reestablece_clave" value="Re-Establece Clave" class="info"
+					onclick="reestablece_clave();" disabled="disabled" /></div>
+				</td>
+			</tr>
+		</table>
+		</div>
+		<div id="div_descripcion"></div>
+		</td>
+	</tr>
+</table>
+</div>
+
+<script type="text/javascript">
+if (document.frm.hd_variable.value == 1){
+	alert(document.frm.hd_error.value);
+	cargarTab('/mantenimiento/');
+}else{
+	if(document.frm.hdn_operacion.value == "C"){
+		deshabilitar();
+	}//end if
+	if (document.frm.hd_error.value !== ""){
+		alert(document.frm.hd_error.value);
+	}//end if
+	if (document.frm.hdn_operacion.value == ""){
+		document.frm.txt_codigo.focus();
+	}//end if
+}//end if	
+</script>
+ </body>
+</html>
+
