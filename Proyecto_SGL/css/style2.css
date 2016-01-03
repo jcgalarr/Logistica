@@ -1,0 +1,119 @@
+footer {
+    background-image: url(../images/linea.png) ;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-color: #434343;
+}
+
+
+@media (min-width: 1200px)
+.container {
+width: auto !important;
+}
+
+.container {
+    width: auto;
+    padding-right: 10px !important;
+    padding-left: 10px !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
+
+@media (min-width: 1200px)
+.col-lg-4 {
+width: 400px!important;
+margin-left: 20px !important;
+margin-right: -1px !important;
+}
+
+.btn {
+    float: right !important;
+}
+
+footer .container .row .col-lg-4 p, footer .container .row .col-lg-4 .direccion  {
+    color: #fff !important;
+    margin-top: 16px !important;
+    padding: 5px  !important;;
+}
+
+.foot{
+    text-align: left !important;
+}
+
+ .infoCentro {
+    border-right-style: dotted;
+    border-right-color: #fff;
+    border-right-width: 2px;
+    border-left-style: dotted;
+    border-left-color: #fff;
+    border-left-width: 2px;
+     margin-top: 5px;
+}
+
+.derAutor {
+    text-align: center;
+    border-top-style: dotted;
+    border-top-color: #fff;
+    border-top-width: 2px;
+    font-size: 18px;
+    color: #fff;
+    padding: 20px;
+}
+
+.imgfoot{
+    margin-top: 20px !important;
+}
+
+.space{
+    height: 77px;
+    background-color: #434343 !important;
+}
+
+.img-centro{
+    position: absolute;
+    padding-top: 198px;
+    padding-left: 136px;
+}
+
+.modal-login{
+    background-image: url("../images/fondo.png") ;
+    background-color: #434343 ;
+    background-position: top;
+    
+}
+
+.linea{
+    border-right-style: dotted;
+    border-right-width: 3px;
+    border-bottom-color: #fff;
+}
+
+.fondo-login{
+    background-color: rgba(0,0,0,0.5);
+    text-align: left;
+    
+}
+
+.mimodal{
+    width: 793px;
+}
+
+.modallog{
+ top: -150px !important;
+    height: 600px !important;
+}
+
+.pull-right {
+color: #fff !important;
+}
+
+
+.text-log{
+    color: #000 !important;
+}
+
+.foto-reg{
+    padding-top: 73px;
+position: absolute;
+padding-left: 25px;
+}

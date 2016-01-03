@@ -1,0 +1,208 @@
+.lnk {
+	font-family: Tahoma;
+	font-size: 8pt;
+	font-weight: normal;
+	text-decoration: none;
+	color: #000000;
+}
+
+.lnk a:link {
+	font-family: Tahoma;
+	font-size: 8pt;
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+.lnk a:visited {
+	font-family: Tahoma;
+	font-size: 8pt;
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+.lnk a:active {
+	font-family: Tahoma;
+	font-size: 8pt;
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+.lnk a:hover {
+	font-family: Tahoma;
+	font-size: 8pt;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+.treeview {
+	margin: 0px;
+	padding: 0px;
+	font-family: Tahoma;
+	font-size: 8pt;
+	font-weight: normal;
+	color: #000000;
+}
+
+.treeviewFolderUl {
+	margin-left: 20px;
+	padding-left: 0px;
+}
+
+.treeviewFolderLi {
+	margin-top: 3px;
+	list-style-type: none;
+	vertical-align: middle;
+}
+
+.widget { /*margin: 20px;
+	padding: 10px;*/
+	background: #f3f1eb;
+	border: 1px solid #dedbd1;
+	margin-left: 0px;
+	margin-top: 0px;
+	/*margin-left: 5px;
+	margin-top: -10px;*/ /*vertical-align:top;*/
+}
+
+.widget a {
+	color: #000000;
+	text-decoration: none;
+}
+
+.widget a:hover {
+	color: #000000;
+	text-decoration: underline;
+}
+
+.lnktxt {
+	font-family: Tahoma;
+	display: inline;
+	list-style: none;
+	margin-left: 5px;
+	padding-right: 5px;
+	padding-left: 10px;
+}
+
+.lnktxt  a {
+	font-family: Tahoma;
+	font-size: 8pt;
+	font-weight: bold;
+	text-decoration: none;
+	/*text-transform: uppercase;*/
+	color: #1757B6;
+	/*color:#322D6F;*/ /*color: #330099;*/
+	padding: 4px 6px;
+	/*outline: none;*/
+}
+
+.lnktxt  a:hover,.tabnav  a:active,.tabnav .ui-tabs-selected a {
+	font-family: Tahoma;
+	font-size: 8pt;
+	font-weight: bold;
+	background: #dedbd1;
+	color: #1757B6;
+	/*color:#322D6F;*/
+	text-decoration: underline;
+}
+
+.tabnav li {
+	display: inline;
+	list-style: none;
+	padding-right: 5px;
+}
+
+.tabnav li a {
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #222;
+	font-weight: bold;
+	padding: 4px 6px;
+	/*outline: none;*/
+}
+
+.tabnav li a:hover,.tabnav li a:active,.tabnav li.ui-tabs-selected a {
+	background: #dedbd1;
+	color: #222;
+	text-decoration: none;
+}
+
+.tabdiv {
+	margin-top: 2px;
+	background: #fff;
+	border: 1px solid #dedbd1;
+	padding: 5px;
+}
+
+.tabdiv li {
+	list-style-image: url("star.png");
+	margin-left: 20px;
+}
+
+div#tabs {
+	width:98%;
+	margin:0 auto;
+	font-size: 11px;
+	border: 1px solid #bfbdb0;
+}
+
+/* DIV that holds each tab*/
+div.my_tab {
+	width: 750px;
+	margin: 0px auto;
+}
+
+/* Title of each tab, used when user don't have Javascript'*/
+div.my_tab h5 {
+	color: #414141;
+	border-bottom: solid 1px #cacaca;
+}
+
+/* Tab Bar, created via JS*/
+div#tab-bar {
+	padding: 0px 0px 0px 10px;
+	margin: 0px;
+	height: 35px;
+	background: #f3f1eb;
+	border-bottom: solid 1px #bfbdb0;
+	margin-bottom: 5px;
+	/*	font:normal 12px "Trebuchet MS";*/
+}
+
+/* Single Tab */
+div#tab-bar div.mt-tab {
+	float: left;
+	display: inline;
+	position: relative;
+	text-align: center;
+	margin: 6px 5px -3px 0px;
+	cursor: pointer;
+	border-top: solid 1px #bfbdb0;
+	border-left: solid 1px #bfbdb0;
+	border-right: solid 1px #bfbdb0;
+	border-bottom: solid 1px #bfbdb0;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-weight: normal;
+	/*font:normal 13px "Trebuchet MS";*/
+	height: 17px;
+	color: #414141;
+	padding: 6px 10px 5px 10px;
+}
+
+/* Single Tab, when active */
+div#tab-bar div.mt-tab-active {
+	float: left;
+	display: inline;
+	text-align: center;
+	/*margin: 6px 5px -5px 0px;*/
+	cursor: pointer;
+	border-top: solid 1px #bfbdb0;
+	border-left: solid 1px #bfbdb0;
+	border-right: solid 1px #bfbdb0;
+	border-bottom: none;
+	height: 18px;
+	color: Black;
+	font-weight: bold;
+	/*padding: 6px 10px 5px 10px;*/
+	background-color: #FBFBF8;
+}
