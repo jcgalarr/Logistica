@@ -1,0 +1,89 @@
+.lnk {
+	font-family: Tahoma;
+	font-size: 8pt;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+.lnk a:link {
+	font-family: Tahoma;
+	font-size: 8pt;
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+.lnk a:visited {
+	font-family: Tahoma;
+	font-size: 8pt;
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+.lnk a:active {
+	font-family: Tahoma;
+	font-size: 8pt;
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+.lnk a:hover {
+	font-family: Tahoma;
+	font-size: 8pt;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+.treeview {
+	margin: 0px;
+	padding: 0px;
+	font-family: Tahoma;
+	font-size: 8pt;
+	font-weight: normal;
+	color: #000000
+}
+
+.treeviewFolderUl {
+	margin-left: 20px;
+	padding-left: 0px;
+}
+
+.treeviewFolderLi {
+	margin-top: 3px;
+	list-style-type: none;
+	/*vertical-align:middle;*/
+}
+
+.lnktxt {
+	font-family: Tahoma;
+	font-size: 8pt;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+.lnktxt a:link {
+	font-family: Tahoma;
+	font-size: 8pt;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+.lnktxt a:visited {
+	font-family: Tahoma;
+	font-size: 8pt;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+.lnktxt a:active {
+	font-family: Tahoma;
+	font-size: 8pt;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+.lnktxt a:hover {
+	font-family: Tahoma;
+	font-size: 8pt;
+	font-weight: normal;
+	text-decoration: none;
+}
