@@ -17,7 +17,7 @@
   <link href="css/scrolling-nav.css" rel="stylesheet">
   <link href="css/animate.css" rel="stylesheet" />
   <link href="css/style2.css" rel="stylesheet">
-  <script src="js/ie-emulation-modes-warning.js"></script>
+ 
   <link href="css/carousel.css" rel="stylesheet">  
 
   <!--[if lt IE 9]>
