@@ -50,7 +50,7 @@
 		</div>
     </section>
 
-      <a id="tohash" href="#services"><i class="fa fa-angle-down"></i></a>
+      <!--<a id="tohash" href="#services"><i class="fa fa-angle-down"></i></a>--> 
     
 
 
