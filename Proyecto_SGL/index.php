@@ -15,9 +15,7 @@
   <link id="css-preset" href="css/presets/preset1.css" rel="stylesheet">
   <link href="css/responsive.css" rel="stylesheet">
   <link href="css/scrolling-nav.css" rel="stylesheet">
-  <link href="css/animate.css" rel="stylesheet" />
   <link href="css/style2.css" rel="stylesheet">
- 
   <link href="css/carousel.css" rel="stylesheet">  
 
   <!--[if lt IE 9]>
@@ -26,7 +24,7 @@
   <![endif]-->
   
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
-  <link rel="shortcut icon" href="images/favicon.ico">
+
 </head><!--/head-->
 
 <body>
@@ -52,7 +50,7 @@
 		</div>
     </section>
 
-      <a id="tohash" href="#services"><i class="fa fa-angle-down"></i></a>
+      <!--<a id="tohash" href="#services"><i class="fa fa-angle-down"></i></a>--> 
     
 
 
