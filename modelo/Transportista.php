@@ -6,17 +6,16 @@ class Transportista
     private $nombre;
     private $direccion;
     private $telefono1;
-    private $telefono2;
+    private $telefono2;	
     private $numcelular1;
     private $numcelular2;
-    private $tipo;
-    private $contrato;
+
 
 
 
 
   
-    function __construct($ruc, $nombre,$direccion,$telefono1,$telefono2,$numcelular1,$numcelular2,$tipo,$contrato) {
+    function __construct($ruc, $nombre,$direccion,$telefono1,$telefono2,$numcelular1,$numcelular2) {
        $this->ruc = $ruc;
        $this->nombre = $nombre;
        $this->direccion = $direccion;
@@ -24,8 +23,7 @@ class Transportista
        $this->telefono2 = $telefono2;
        $this->numcelular1 = $numcelular1;
        $this->numcelular2 = $numcelular2;
-       $this->tipo	 = $tipo;
-       $this->contrato	 = $contrato;
+      
 
 
 
@@ -85,25 +83,11 @@ class Transportista
        $this->numcelular2 = $numcelular2;
      } 
 
-     function getnumcelular1(){
+     function getnumcelular2(){
        return $this->numcelular1;
      } 
 
-   function settipo($tipo){
-       $this->tipo = $tipo;
-     } 
-
-     function gettipo(){
-       return $this->tipo;
-     } 
-
- function setcontrato($contrato){
-       $this->contrato = $contrato;
-     } 
-
-     function getcontrato(){
-       return $this->contrato;
-     } 
+   
        
  
 }
