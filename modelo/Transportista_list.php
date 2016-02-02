@@ -28,14 +28,14 @@ include_once("TransportistaCollector.php");
     <table class="table table-condensed table-bordered table-hover">
         <thead>
             <tr>
-                <th>RUC</th>
-                <th>NOMBRE</th>
-                <th>DIRECCION</th>
-                <th>TELEFONO 1</th>
-  	        <th>TELEFONO 2</th>
-	        <th>CELULAR 1</th>
-	        <th>CELULAR 2</th>
-	        <th colspan = 2>ACCION</th>
+                <th bgcolor="#D8D8D8">RUC</th>
+                <th bgcolor="#D8D8D8">NOMBRE</th>
+                <th bgcolor="#D8D8D8">DIRECCION</th>
+                <th bgcolor="#D8D8D8">TELEFONO 1</th>
+  	        <th bgcolor="#D8D8D8">TELEFONO 2</th>
+	        <th bgcolor="#D8D8D8">CELULAR 1</th>
+	        <th bgcolor="#D8D8D8">CELULAR 2</th>
+	        <th colspan = 2 bgcolor="#D8D8D8">ACCION</th>
            </tr>
         </thead>
 
