@@ -84,7 +84,7 @@ class Transportista
      } 
 
      function getnumcelular2(){
-       return $this->numcelular1;
+       return $this->numcelular2;
      } 
 
    
