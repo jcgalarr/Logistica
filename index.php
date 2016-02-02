@@ -79,7 +79,7 @@
         });
 		
 		function logonear(){
-			window.open("views/LoginView.html");
+			window.open("views/LoginView.php");
 			
 		}
     </script>
