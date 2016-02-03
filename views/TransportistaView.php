@@ -1,5 +1,8 @@
 <?php
-session_start();
+ session_start();
+ include_once('../Modelo/Transportista.php');
+ include_once('../Modelo/TransportistaCollector.php');
+ $TransportistaCollectorObj = new TransportistaCollector();
 ?>
 
 <!doctype html>
@@ -18,25 +21,27 @@ session_start();
 	<div class="page-header">
        <h1>Transportista</h1>
     </div>
-   <form class="form-horizontal">
+   <form action ="../Modelo/Transportista_insert.php" method ="post" class="form-horizontal">
  
+       
+
     <div class="form-group">
         <label class="control-label col-xs-3" >Ruc:</label>
         <div class="col-xs-2">
-            <input type="tel" class="form-control" placeholder="Ruc">
+            <input type="tel"  name="txtruc"  class="form-control" placeholder="Ruc">
         </div>
     </div>
     <div class="form-group">
         <label class="control-label col-xs-3">Nombre:</label>
         <div class="col-xs-9">
-            <input type="text" class="form-control" placeholder="Nombre">
+            <input type="text"  name="txtnombre"   class="form-control" placeholder="Nombre">
         </div>
     </div>
     
 	<div class="form-group">
         <label class="control-label col-xs-3" >Dirección:</label>
         <div class="col-xs-9">
-            <input type="text" class="form-control" placeholder="Direccion">
+            <input type="text"  name="txtdireccion"   class="form-control" placeholder="Direccion">
         </div>
     </div>
     
@@ -44,11 +49,11 @@ session_start();
 	<div class="form-group">
         <label class="control-label col-xs-3" >Telefono 1:</label>
         <div class="col-xs-2">
-            <input type="tel" class="form-control" placeholder="Telefono 1">
+            <input type="tel" name="txttel1" class="form-control" placeholder="Telefono 1">
         </div>
 		<label class="control-label col-xs-2" >Telefono 2:</label>
 		<div class="col-xs-2">
-            <input type="tel" class="form-control" placeholder="Telefono 2">
+            <input type="tel" name="txttel2"class="form-control" placeholder="Telefono 2">
         </div>
     </div>
 	
@@ -56,58 +61,23 @@ session_start();
 	<div class="form-group">
         <label class="control-label col-xs-3" >Celular 1:</label>
         <div class="col-xs-2">
-            <input type="tel" class="form-control" placeholder="Celular 1">
+            <input type="tel"  name="txtcelular1"   class="form-control" placeholder="Celular 1">
         </div>
 		<label class="control-label col-xs-2" >Celular 2:</label>
         <div class="col-xs-2">
-            <input type="tel" class="form-control" placeholder="Celular 2">
-        </div>
-    </div>
-	
-	<div class="form-group">
-        <label class="control-label col-xs-3" >Contacto 1:</label>
-        <div class="col-xs-3">
-            <input type="tel" class="form-control" placeholder="Contacto 1">
-        </div>
-		<label class="control-label col-xs-2" >Contacto 2:</label>
-        <div class="col-xs-3">
-            <input type="tel" class="form-control" placeholder="Contacto 2">
+            <input type="tel" name="txtcelular2" class="form-control" placeholder="Celular 2">
         </div>
     </div>
 	
 	
-    <div class="form-group">
-        <label class="control-label col-xs-3" >Tipo:</label>
-        <div class="col-xs-2 select">
-           <input type="text" class="form-control" list="tipo" placeholder="Tipo" >
-		   <datalist id="tipo">
-			<option value="Juridico" label="Juridico">
-			<option value="Natural" label="Natural">
-		   </datalist>
-			<!--<input type="text" class="form-control" placeholder="Estado">-->
-        </div>
-    </div>		
 	
-	<div class="form-group">
-        <label class="control-label col-xs-3" >Contrato:</label>
-        <div class="col-xs-2 select">
-           <input type="text" class="form-control" list="tipo" placeholder="Contrato" >
-		   <datalist id="Contrato">
-			<option value="Fijo" label="Fijo">
-			<option value="Temporal" label="Temporal">
-		   </datalist>
-			<!--<input type="text" class="form-control" placeholder="Estado">-->
-        </div>
-    </div>		
     
     <br>
     <div class="form-group">
         <div class="col-xs-offset-3 col-xs-9">
             <input type="submit" class="btn btn-primary" value="Ingresar">
-            <input type="submit" class="btn btn-primary" value="Modificar">
-			<input type="submit" class="btn btn-primary" value="Eliminar">
-			<input type="reset" class="btn btn-primary" value="Limpiar">
-			
+            <input type="reset" class="btn btn-primary" value="Limpiar">
+	    <input type="button" value="Regresar" OnClick="history.back()" class="btn btn-primary">		
 			
         </div>
     </div>
