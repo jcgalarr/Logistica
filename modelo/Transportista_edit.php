@@ -25,7 +25,7 @@
 	<div class="page-header">
        <h1>Transportista</h1>
     </div>
-   <form action ="../Modelo/Transportista_update.php" method ="post" class="form-horizontal">
+   <form action ="../modelo/Transportista_update.php" method ="post" class="form-horizontal">
  
        
 
