@@ -187,7 +187,7 @@ session_start();
               <i class="fa fa-share-square"></i>
             </div>
             <div class="service-info">
-			  <a href="TransportistaView.php">Transportista</a>
+			  <a href="../modelo/Transportista_list.php">Transportista</a>
               <!--<h3>Despacho de Mercadería</h3>-->
               <p>Mediante ésta opción se procederá a realizar el mantenimiento de los Transportistas</p>
             </div>
