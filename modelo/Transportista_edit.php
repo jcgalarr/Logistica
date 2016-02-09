@@ -82,7 +82,7 @@
         <div class="col-xs-offset-3 col-xs-9">
             <input type="submit" class="btn btn-primary" value="Actualizar">
             <input type="reset" class="btn btn-primary" value="Limpiar">
-	    <input type="button" value="Regresar" OnClick="history.back()" class="btn btn-primary">		
+	    <input type="button" value="Regresar" OnClick="Ira()" class="btn btn-primary">		
 			
         </div>
     </div>
@@ -93,6 +93,14 @@
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="../js/responsive.js"></script>
     <script src="../js/bootstrap.min.js"></script>
+
+
+
+<script>
+      	function Ira(){
+			window.open("Transportista_list.php");
+		}
+		    </script>
 </body>
 </html>
 
