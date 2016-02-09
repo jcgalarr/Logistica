@@ -1,7 +1,7 @@
 <?php
  session_start();
- include_once('../Modelo/Transportista.php');
- include_once('../Modelo/TransportistaCollector.php');
+ include_once('../modelo/Transportista.php');
+ include_once('../modelo/TransportistaCollector.php');
  $TransportistaCollectorObj = new TransportistaCollector();
 ?>
 
@@ -21,7 +21,7 @@
 	<div class="page-header">
        <h1>Transportista</h1>
     </div>
-   <form action ="../Modelo/Transportista_insert.php" method ="post" class="form-horizontal">
+   <form action ="../modelo/Transportista_insert.php" method ="post" class="form-horizontal">
  
        
 
