@@ -8,36 +8,41 @@ class UsuarioCollector extends conexion
   
   function showUsuario() {
     $rows = self::$db->getRows("SELECT * FROM usuario ");        
-    $arrayAreaTrabajo= array();        
+    $arrayUsuario= array();        
     foreach ($rows as $c){
-      $aux = new Usuario($c{'codigo'},$c{'nombre'},$c{'apellido'},$c{'permisos'},$c{'privilegios'},$c{'cargo'},$c{'departamento'},$c{'bodega'},$c{'cedula'},$c{'fechacrea'},$c{'fechamodi'});
+      $aux = new Usuario($c{'codigo'},$c{'nombre'},$c{'apellido'},$c{'cargo'},$c{'departamento'},$c{'bodega'},$c{'cedula'},$c{'login'},$c{'contrasena'},$c{'estado'},$c{'tipousu'});
       array_push($arrayUsuario, $aux);
     }
     return $arrayUsuario;        
   }
+
+    function validaCedula ($id) {
+    $row = self::$db->getRow("SELECT * FROM usuario where cedula = '$id'");
+    $Usuario = new Usuario($row{'codigo'},$row{'nombre'},$row{'apellido'},$row{'cargo'},$row{'departamento'},$row{'bodega'},$row{'cedula'},$row{'login'},$row{'contrasena'},$row{'estado'},$row{'tipousu'});
+    return $Usuario;        
+  }
  
-  function showUsuario($codigo) {
-    $row = self::$db->getRow("SELECT * FROM usuario where codigo = $codigo");   
-    $Usuario = new Usuario($row{'codigo'},$row{'nombre'},$row{'apelido'},$row{'permisos'},$row{'privilegios'},$row{'cargo'},$row{'departamento'},$row{'bodega'},$row{'cedula'},$row{'fechacrea'},$row{'fechamodi'});
+  function showUsuarioId($id) {
+    //echo $id;
+    $row = self::$db->getRow("SELECT * FROM usuario where codigo = '$id'");   
+    //print_r ($row); 
+    $Usuario = new Usuario($row{'codigo'},$row{'nombre'},$row{'apellido'},$row{'cargo'},$row{'departamento'},$row{'bodega'},$row{'cedula'},$row{'login'},$row{'contrasena'},$row{'estado'},$row{'tipousu'});
     return $Usuario;        
   }
 
-  function updateUsuario($codigo,$nombre,$apellido,$permisos,$privilegios,$cargo,$departamento,$bodega,$cedula,$fechacrea,$fechamodi) {
-    $update = self::$db->getRow("Update usuario set nombre='$nombre',apellido='$apellido',permisos='$permisos',privilegios='$privilegios',cargo='$cargo',departamento='$departamento',bodega='$bodega',cedula='$cedula',fechacrea='$fechacrea',fechamodi='$fechamodi' where codigo=$codigo");             
+  function updateUsuario($codigo,$nombre,$apellido,$cargo,$departamento,$bodega,$cedula,$login,$contrasena,$estado,$tipousu) {
+    $update = self::$db->getRow("Update usuario set nombre='$nombre',apellido='$apellido',cargo='$cargo',departamento='$departamento',bodega='$bodega',cedula='$cedula',login='$login',contrasena='$contrasena',estado='$estado',tipousu='$tipousu' where codigo= '$codigo'");             
 	return 1;  
   }
 
-  function deleteUsuario($codigo) {
-   $delete = self::$db->getRow("Delete from usuario where codigo=$codigo");   
+  function deleteUsuario($id) {
+   $delete = self::$db->getRow("Delete from usuario where codigo='$id'");   
    return 1;          
   }
 
-  function insertUsuario($codigo,$nombre,$apellido,$permisos,$privilegios,$cargo,$departamento,$bodega,$cedula,$fechacrea,$fechamodi) {
-    $new_row = self::$db->getRow("Insert into usuario (codigo,nombre,apellido,permisos,privilegios,cargo,departamento,bodega,cedula,fechacrea,fechamodi) values ('$codigo','$nombre','$apellido','$permisos','$privilegios','$cargo','$departamento','$bodega','$cedula','$fechacrea','$fechamodi'),");
+  function insertUsuario($nombre,$apellido,$cargo,$departamento,$bodega,$cedula,$login,$contrasena,$estado,$tipousu) {
+    $new_row = self::$db->getRow("Insert into usuario (nombre,apellido,cargo,departamento,bodega,cedula,login,contrasena,estado,tipousu) values ('$nombre','$apellido','$cargo','$departamento','$bodega','$cedula','$login','$contrasena','$estado','$tipousu')");
  return 1;               
   }
-
-  
-
 }
 ?>
