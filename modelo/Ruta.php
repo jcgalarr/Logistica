@@ -8,9 +8,7 @@ class Ruta
     private $destino;
     private $tiemporuta;
     private $tiporuta;
-    
-
-  
+      
     function __construct($codigo,$descripcion,$origen,$destino,$tiemporuta,$tiporuta) {
        $this->codigo = $codigo;
        $this->descripcion = $descripcion;
@@ -59,7 +57,7 @@ class Ruta
 
      function gettiemporuta(){
        return $this->tiemporuta;
-     } 
+     }        
 
      function settiporuta($tiporuta){
        $this->tiporuta = $tiporuta;
