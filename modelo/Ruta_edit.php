@@ -26,7 +26,7 @@
     </div>
    <form id="frm_ruta" name="frm_ruta" action ="../modelo/Ruta_update.php" method ="post" class="form-horizontal">
    	    <div class="form-group">
-        <label class="control-label col-xs-3" >Codigo de la Ruta:</label>
+        <label class="control-label col-xs-3" >Código de la Ruta:</label>
         <div class="col-xs-2">
             <input type="tel" name="txtcodigo" id="txtcodigo"  class="form-control"  value = "<?php echo $ObjRuta->getcodigo(); ?>">
     
@@ -34,7 +34,7 @@
     </div>
  
     <div class="form-group">
-        <label class="control-label col-xs-3" >Descripcion de Ruta:</label>
+        <label class="control-label col-xs-3" >Descripción de Ruta:</label>
         <div class="col-xs-2">
             <input type="text"  name="txtdescripcion" id="txtdescripcion"  class="form-control" value = "<?php echo $ObjRuta->getdescripcion(); ?>">
     
@@ -98,5 +98,7 @@
     <script src="../js/funcionesgenerales.js"></script>
 </body>
 </html>
+
+
 
 
