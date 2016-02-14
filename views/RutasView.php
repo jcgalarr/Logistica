@@ -1,5 +1,6 @@
 <?php
 session_start();
+include_once ('../modelo/conexion.php');
 ?>
 
 <!doctype html>
@@ -15,52 +16,63 @@ session_start();
 
 <body>
   <div class="container">
+   <div class="col-xs-offset-10 col-xs-9">
+   <br>
+  <input  type="button" value="Menú" OnClick="window.location='../views/ViewMenu.php'" class="btn btn-primary" class="">
+  </div>
 	<div class="page-header">
-       <h1>Mantenimiento de Rutas</h1>
+       <h1>Ingreso de Rutas</h1>
     </div>
-   <form class="form-horizontal">
+
+   <form id="frm_ruta" name="frm_ruta" action ="../modelo/Ruta_insert.php " method ="post" class="form-horizontal">
+    
     <div class="form-group">
         <label class="control-label col-xs-3">Descripcion de Ruta:</label>
         <div class="col-xs-9">
-            <input type="text" class="form-control" id="inputRuta" placeholder="Nombre dela Ruta">
+            <input type="text" id="txtdescripcion" name="txtdescripcion"  class="form-control" placeholder="Nombre dela Ruta" >
         </div>
     </div>
+
     <div class="form-group">
         <label class="control-label col-xs-3">Origen:</label>
         <div class="col-xs-9">
-            <input type="text" class="form-control" id="inputOrigen" placeholder="Origen de la Ruta">
+            <input type="text" id="txtorigen" name="txtorigen" class="form-control"  placeholder="Origen de la Ruta" >
         </div>
     </div>
+
     <div class="form-group">
         <label class="control-label col-xs-3">Destino:</label>
         <div class="col-xs-9">
-            <input type="text" class="form-control" id="inputDestino" placeholder="Destino de la Ruta">
+            <input type="text" id="txtdestino" name="txtdestino" class="form-control"  placeholder="Destino de la Ruta" >
         </div>
     </div>
+
     <div class="form-group">
         <label class="control-label col-xs-3">Tiempo Ruta:</label>
-        <div class="col-xs-9">
-            <input type="text" class="form-control" id="inputTiempo" placeholder="Tiempo de la Ruta">
+        <div class="col-xs-2">
+            <input type="tel" id="txttiempo" onkeypress="return ValidNumber(event)" class="form-control" name="txttiempo"  placeholder="Tiempo de la Ruta" >
+        </div>
+         <div class="col-xs-2">
+            <input type="text" class="form-control " placeholder="HORA(S)" disabled="true">
         </div>
     </div>
-    
+
     <div class="form-group">
         <label class="control-label col-xs-3">Tipo Ruta:</label>
         <div class="col-xs-9">
-            <select id=tipo>
-		<option value="">Interna</option>
-  		<option value="">Externa</option>
+            <select type="text" name="tipo" placeholder="Ruta" >
+		<option value="I">Interna</option>
+  		<option value="E">Externa</option>
 	    </select>
         </div>
     </div>	
-    
-    <br>
+    <br/>
+
     <div class="form-group">
         <div class="col-xs-offset-3 col-xs-9">
-            <input type="submit" class="btn btn-primary" value="Ingresar">
-            <input type="submit" class="btn btn-primary" value="Modificar">
-	    <input type="submit" class="btn btn-primary" value="Eliminar">
-	    <input type="reset" class="btn btn-primary" value="Limpiar">
+            <input type="button" class="btn btn-primary" OnClick="insertar()"  value="Ingresar">
+            <input type="reset"  class="btn btn-primary" value="Limpiar">
+            <input type="button" value="Consulta Masiva" OnClick="window.location='../modelo/Mantenimiento_Rutas.php'" class="btn btn-primary">
         </div>
     </div>
   </form>
@@ -70,5 +82,41 @@ session_start();
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="../js/responsive.js"></script>
     <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/funcionesgenerales.js"></script>
+    
+  <script>
+      function insertar(){      
+        if (document.getElementById("txtdescripcion").value!="") {
+            if (document.getElementById("txtorigen").value!="") {
+                if (document.getElementById("txtdestino").value!="") {
+                    if (document.getElementById("txttiempo").value!="") {
+                        alert('Grabado exitosamente!');
+                        document.frm_ruta.submit();
+                        }
+                        else{
+                            alert('Campo Tiempo es Obligatorio!');
+                            document.getElementById("txttiempo").focus();
+                            return false;
+                            }
+                        }
+                        else{
+                            alert('Campo Destino es Obligatorio!');
+                            document.getElementById("txtdestino").focus();
+                            return false;
+                            }
+                        }
+                        else{
+                            alert('Campo Origen es Obligatorio!');
+                            document.getElementById("txtorigen").focus();
+                            return false;         
+                             }
+                        }  
+                        else {
+                            alert('Campo Descripcion es Obligatorio!');
+                            document.getElementById("txtdescripcion").focus();
+                            return false;         
+                        }  
+    }
+  </script>
 </body>
 </html>
