@@ -22,7 +22,7 @@
 <body>
   <div class="container">
   <div class="page-header">
-       <h1>Ruta</h1>
+       <h1>Edición de Ruta</h1>
     </div>
    <form id="frm_ruta" name="frm_ruta" action ="../modelo/Ruta_update.php" method ="post" class="form-horizontal">
    	    <div class="form-group">
