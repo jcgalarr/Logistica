@@ -1,3 +1,18 @@
+<?php
+session_start();
+include_once ('../modelo/conexion.php');
+include_once("../modelo/CargoCollector.php");
+$CargoCollectorObj = new CargoCollector();
+
+include_once("../modelo/DepartamentoCollector.php");
+$DepartamentoCollectorObj = new DepartamentoCollector();
+
+include_once("../modelo/BodegaCollector.php");
+$BodegaCollectorObj = new BodegaCollector();
+
+?>
+
+
 <!doctype html>
 <html lang="es">
 <head>
@@ -11,128 +26,116 @@
 
 <body>
   <div class="container">
+   <div class="col-xs-offset-10 col-xs-9">
+   <br>
+  <input  type="button" value="Menú" OnClick="window.location='../views/ViewMenu.php'" class="btn btn-primary" class="">
+  </div>
 	<div class="page-header">
-       <h1>Mantenimiento de Usuario</h1>
-    </div>
-   <form class="form-horizontal">
+       <h1>Ingreso de Usuario</h1>
+    </div> 
+   <form id="frm_usua" name="frm_usua" action ="../modelo/Usuario_insert.php " method ="post" class="form-horizontal">  
     <div class="form-group">
-        <label class="control-label col-xs-3">Id:</label>
+        <label class="control-label col-xs-3">Nombres</label>
         <div class="col-xs-9">
-            <input type="text" class="form-control" id="inputId" placeholder="Codigo de Usuario">
+            <input type="text" class="form-control" id="txtnombre" name="txtnombre" placeholder="Nombres">
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-xs-3">Nombres:</label>
+        <label class="control-label col-xs-3">Apellidos</label>
         <div class="col-xs-9">
-            <input type="text" class="form-control" id="inputNombres" placeholder="Nombres">
+            <input type="text" class="form-control" id="txtapellido" name="txtapellido" placeholder="Apellidos">
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-xs-3">Apellidos:</label>
+	<label class="control-label col-xs-3">Cargo</label>
         <div class="col-xs-9">
-            <input type="text" class="form-control" id="inputApellidos" placeholder="Apellidos">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-xs-3">Permisos:</label>
-        <div class="col-xs-9">
-            <select id=permisos>
-		<option value="">General</option>
-  		<option value="">Administrativo</option>
-		<option value="">Logistica</option>
-  	    </select>
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-xs-3">Privilegios:</label>
-        <div class="col-xs-9">
-	    <select id=privilegios>
-		<option value="">Bodega</option>
-  		<option value="">Administrativo</option>
-  	    </select>
-	</div>
-    </div>
-    <div class="form-group">
-	<label class="control-label col-xs-3">Cargo:</label>
-        <div class="col-xs-9">
-	    <select id=cargo>
-		<option value="">Jefe</option>
-  		<option value="">Operador</option>
+	    <select  type="text"  name="combocargo" id="combocargo">
+      <?php 
+           foreach ($CargoCollectorObj->showCargo() as $c){
+       ?>
+		  <option value="<?php echo $c->getcodigo() ?>"><?php echo $c->getdescripcion() ?></option>
+  		 <?php  
+        }
+        ?>
   	    </select>
 	</div>
     </div>
 
-    <div class="form-group">
-	<label class="control-label col-xs-3">Departamento:</label>
+        <div class="form-group">
+  <label class="control-label col-xs-3">Departamento</label>
         <div class="col-xs-9">
-	    <select id=departamento>
-		<option value="">Recepcion</option>
-  		<option value="">Almacenamiento</option>
-  		<option value="">Despacho</option>
-  		<option value="">Transporte</option>
-		<option value="">Administracion</option>
-	    </select>
-	</div>
+      <select  type="text"  name="combodepartamento" id="combodepartamento">
+      <?php 
+           foreach ($DepartamentoCollectorObj->showDepartamento() as $c){
+       ?>
+      <option value="<?php echo $c->getcodigo() ?>"><?php echo $c->getdescripcion() ?></option>
+       <?php  
+        }
+        ?>
+        </select>
+  </div>
     </div>
-    <div class="form-group">
-        <label class="control-label col-xs-3" >Bodega:</label>
-        <div class="col-xs-9 select">
-          <select id=bodega>
-		<option value="">Ambato</option>
-  		<option value="">Babahoyo</option>
-  		<option value="">Cuenca</option>
-  		<option value="">Guayaquil</option>
-		<option value="">Machala</option>
-		<option value="">Montecristi</option>
-		<option value="">Quito</option>
-		<option value="">Salinas</option>
-	    </select>
-        </div>
-    </div>		
-    <div class="form-group">
-        <label class="control-label col-xs-3">Cedula:</label>
+
+         <div class="form-group">
+  <label class="control-label col-xs-3">Bodega</label>
         <div class="col-xs-9">
-            <input type="text" class="form-control" id="inputCedula" placeholder="# de Cedula">
-        </div>
+      <select  type="text"  name="combobodega" id="combobodega">
+      <?php 
+           foreach ($BodegaCollectorObj->showBodega() as $c){
+       ?>
+      <option value="<?php echo $c->getcodigo() ?>"><?php echo $c->getdescripcion() ?></option>
+       <?php  
+        }
+        ?>
+        </select>
+  </div>
     </div>
+		
     <div class="form-group">
-        <label class="control-label col-xs-3">Last Login:</label>
+        <label class="control-label col-xs-3">Cédula</label>
         <div class="col-xs-9">
-            <input type="text" class="form-control" id="inputLogin" disabled placeholder="Ultima feha de ingeso al Sistema">
+            <input type="tel" onkeypress="return ValidNumber(event)" class="form-control" id="txtcedula" name="txtcedula" placeholder="# de Cédula">
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-xs-3" >Cambiar Clave:</label>
-        <div class="col-xs-9 select">
-          <select id=clave>
-		<option value="">Quincenal</option>
-  		<option value="">Mensual</option>
-  		<option value="">Trimestral</option>
-  		<option value="">Semestral</option>
-	 	
-	  </select>
+        <label class="control-label col-xs-3">Login</label>
+        <div class="col-xs-9">
+            <input type="text" class="form-control" id="txtlogin" name="txtlogin"  placeholder="Nombre de Usuario">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-3">Contraseña:</label>
+        <div class="col-xs-9">
+            <input type="password" class="form-control" id="txtcontrasena" name="txtcontrasena"  placeholder="Ingrese la contraseña">
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-xs-3">Fecha de creacion:</label>
+        <label class="control-label col-xs-3">Estado</label>
         <div class="col-xs-9">
-            <input type="text" class="form-control" id="inputCreacion" disabled placeholder="Fecha de creacion del usuario">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-xs-3">Fecha de modificacion:</label>
-        <div class="col-xs-9">
-            <input type="text" class="form-control" id="inputModificacion" disabled placeholder="Fecha de ultima modificacion del usuario">
+             <select type="text" id="comboestado" name="comboestado">
+      <option value="A">Activo</option>
+      <option value="I">Inactivo</option>
+      </select>
         </div>
     </div>	
+     <div class="form-group">
+        <label class="control-label col-xs-3">Tipo de Usuario:</label>
+        <div class="col-xs-9">
+             <select type="text" id="combotipo" name="combotipo">
+      <option value="A">Administrativo</option>
+      <option value="O">Operacional</option>
+      </select>
+        </div>
+    </div>  
+
+
     <br>
     <div class="form-group">
         <div class="col-xs-offset-3 col-xs-9">
-            <input type="submit" class="btn btn-primary" value="Ingresar">
-            <input type="submit" class="btn btn-primary" value="Modificar">
-	    <input type="submit" class="btn btn-primary" value="Eliminar">
-	    <input type="reset" class="btn btn-primary" value="Limpiar" disabled>
-	    <input type="submit" class="btn btn-primary" value="Re-establecer clave" disabled>
+            <input type="button" class="btn btn-primary" OnClick="insertar()"  value="Ingresar">              
+	    <input type="reset" class="btn btn-primary" value="Limpiar">
+	    <input type="button" value="Consulta Masiva" OnClick="window.location='../modelo/Mantenimiento_Usuarios.php'" class="btn btn-primary">
         </div>
     </div>
   </form>
@@ -142,5 +145,84 @@
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="../js/responsive.js"></script>
     <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/funcionesgenerales.js"></script>
+
+<script>
+      function insertar(){      
+        if (document.getElementById("txtnombre").value!="") {
+            if (document.getElementById("txtapellido").value!="") {
+                if (document.getElementById("combocargo").value!="") {
+                    if (document.getElementById("combodepartamento").value!="") {
+                        if (document.getElementById("combobodega").value!="") {
+                          if (document.getElementById("txtcedula").value!="") {
+                            if (document.getElementById("txtlogin").value!="") {
+                              if (document.getElementById("txtcontrasena").value!="") {
+                                if (document.getElementById("comboestado").value!="") {
+                                  if (document.getElementById("combotipo").value!="") {
+                            //alert('Grabado exitosamente!');
+                            document.frm_usua.submit();
+                        }
+                        else{
+                            alert('Campo Tipo de Usuario es Obligatorio!');
+                            document.getElementById("combotipo").focus();
+                            return false;
+                            }
+                        }
+                        else{
+                            alert('Campo Estado es Obligatorio!');
+                            document.getElementById("comboestado").focus();
+                            return false;
+                            }
+                        }
+                        else{
+                            alert('Campo Contraseña es Obligatorio!');
+                            document.getElementById("txtcontrasena").focus();
+                            return false;         
+                             }
+                        }  
+                        else {
+                            alert('Campo Login es Obligatorio!');
+                            document.getElementById("txtlogin").focus();
+                            return false;         
+                            }
+                        } 
+                        else {
+                            alert('Campo Cédula es Obligatorio!');
+                            document.getElementById("txtcedula").focus();
+                            return false;         
+                            }  
+                        }
+                        else{
+                            alert('Campo Bodega es Obligatorio!');
+                            document.getElementById("combobodega").focus();
+                            return false;
+                            }
+                        }
+                        else{
+                            alert('Campo Departamento es Obligatorio!');
+                            document.getElementById("combodepartamento").focus();
+                            return false;
+                            }
+                        }
+                        else{
+                            alert('Campo Cargo es Obligatorio!');
+                            document.getElementById("combocargo").focus();
+                            return false;         
+                             }
+                        }  
+                        else {
+                            alert('Campo Apellido es Obligatorio!');
+                            document.getElementById("txtapellido").focus();
+                            return false;         
+                            }
+                        } 
+                        else {
+                            alert('Campo Nombre es Obligatorio!');
+                            document.getElementById("txtnombre").focus();
+                            return false;         
+                        }  
+          
+    }
+  </script>
 </body>
 </html>
