@@ -79,7 +79,8 @@
         });
 		
 		function logonear(){
-			window.open("views/LoginView.php");
+			//window.open("views/LoginView.php");
+			window.open("views/LoginView.php","_self");
 			
 		}
     </script>
