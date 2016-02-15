@@ -125,7 +125,7 @@ include_once('puentemenu.php');
               <i class="fa fa-share-square"></i>
             </div>
             <div class="service-info">
-			  <a href="DespachoView.php">Carga de camiones</a>
+			  <a href="CargaCamionesView.php">Carga de camiones</a>
               <!--<h3>Despacho de Mercadería</h3>-->
               <p>Mediante ésta opción se procederá a realizar la carga de camiones</p>
             </div>
