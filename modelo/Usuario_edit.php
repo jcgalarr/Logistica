@@ -37,7 +37,7 @@ $BodegaCollectorObj = new BodegaCollector();
 	<div class="page-header">
        <h1>Edición de Usuario</h1>
     </div> 
-   <form id="frm_usua" name="frm_usua" action ="../modelo/Usuario_insert.php " method ="post" class="form-horizontal">  
+   <form id="frm_usua" name="frm_usua" action ="../modelo/Usuario_update.php " method ="post" class="form-horizontal">  
    <div class="form-group">
         <label class="control-label col-xs-3">Codigo</label>
         <div class="col-xs-9">
@@ -145,7 +145,7 @@ $BodegaCollectorObj = new BodegaCollector();
     <br>
     <div class="form-group">
         <div class="col-xs-offset-3 col-xs-9">
-            <input type="submit" class="btn btn-primary" OnClick="mensaje()"  value="Actualizar">              
+            <input type="button" class="btn btn-primary" OnClick="mensaje()"  value="Actualizar">              
 	    <input type="reset" class="btn btn-primary" value="Limpiar">
 	    <input type="button" value="Consulta Masiva" OnClick="window.location='../modelo/Mantenimiento_Usuarios.php'" class="btn btn-primary">
         </div>
@@ -160,8 +160,8 @@ $BodegaCollectorObj = new BodegaCollector();
     <script src="../js/funcionesgenerales.js"></script>
 
 <script > function mensaje(){
-        alert('Registro actualizado exitosamente!');
-        submit();
+        //alert('Registro actualizado exitosamente!');
+        document.frm_usua.submit();
     }
     </script>
 
