@@ -22,6 +22,7 @@ class ChoferCollector extends conexion
   }
 
 
+
   function showChoferId($id) {
     //echo $id;
     $row = self::$db->getRow("SELECT * FROM chofer where codigo = '$id'");   
