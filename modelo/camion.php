@@ -13,7 +13,7 @@ class camion
     private $cod_chofer;
     private $cod_transportista;
   
-    function __construct($placa, $anio,$marca,$tipo,$tonelaje,$cadies,$pallets,$tipocombustible,$cod_chofer,$cod_transportista) {
+    function __construct($placa,$anio,$marca,$tipo,$tonelaje,$cadies,$pallets,$tipocombustible,$cod_chofer,$cod_transportista) {
        $this->placa = $placa;
        $this->anio = $anio;
        $this->marca = $marca;
