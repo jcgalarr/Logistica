@@ -2,10 +2,10 @@
 include_once('dataBase.php');
 
 // Define configuration
-define("DB_HOST", "localhost");
-define("DB_USER", "postgres");
-define("DB_PASS", "postgres");
-define("DB_NAME", "sgl");
+define("DB_HOST", "ec2-54-204-6-113.compute-1.amazonaws.com");
+define("DB_USER", "jicnmumknlmuyd");
+define("DB_PASS", "JTKvA5jBPjC_JDUHF9fdHDZkWG");
+define("DB_NAME", "do2qi8u7spl7o");
 
 
 class conexion extends dataBase
