@@ -110,14 +110,14 @@ $BodegaCollectorObj = new BodegaCollector();
     <div class="form-group">
         <label class="control-label col-xs-3">Login</label>
         <div class="col-xs-9">
-            <input type="text" class="form-control" id="txtlogin" name="txtlogin" disabled placeholder="Nombre de Usuario" value = "<?php echo $ObjUsuario->getlogin(); ?>">
+            <input type="text" class="form-control" id="txtlogin" name="txtlogin" placeholder="Nombre de Usuario" value = "<?php echo $ObjUsuario->getlogin(); ?>">
         </div>
     </div>
 
     <div class="form-group">
         <label class="control-label col-xs-3">Contraseña:</label>
         <div class="col-xs-9">
-            <input type="password" class="form-control" id="txtcontrasena" name="txtcontrasena" disabled placeholder="Ingrese la contraseña" value = "<?php echo $ObjUsuario->getcontrasena(); ?>">
+            <input type="password" class="form-control" id="txtcontrasena" name="txtcontrasena" placeholder="Ingrese la contraseña" value = "<?php echo $ObjUsuario->getcontrasena(); ?>">
         </div>
     </div>
     <div class="form-group">
