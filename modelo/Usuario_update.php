@@ -21,7 +21,7 @@
 	echo"<script>alert('Cédula ya existe!');window.location.href=\"../views/UsuaView.php\"</script>";		
 	}
 	else {
-		$UsuarioCollectorObj->insertChofer($codigo,$nombre,$apellido,(int)$cargo,(int)$departamento,(int)$bodega,$cedula,$login,$contrasena,$estado,$tipousu);
+		$UsuarioCollectorObj->updateUsuario($codigo,$nombre,$apellido,(int)$cargo,(int)$departamento,(int)$bodega,$cedula,$login,$contrasena,$estado,$tipousu);
 		echo"<script>alert('Registro Grabado con éxito');window.location.href=\"../views/UsuaView.php\"</script>";
 	}
 ?>
