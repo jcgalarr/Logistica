@@ -173,7 +173,7 @@ include_once('puentemenu.php');
               <i class="fa fa-map-marker"></i>
             </div>
             <div class="service-info">
-              <a href="Ubicacionview.php">Ubicacion</a>
+              <a href="UbicacionView.php">Ubicacion</a>
 			  <!--<h3>Ingreso de Bodega</h3>-->
               <p>Mediante ésta opción se procederá a realizar el mantenimiento de las Ubicaciones</p>
             </div>
