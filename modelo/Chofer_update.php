@@ -23,11 +23,11 @@ session_start();
 
  
  if ( $ObjChofer->getcodigo() != $codigo){
- 	echo"<script>alert('Licencia ya existe');window.location.href=\"../views/ChoferView.php\"</script>";
+ 	echo"<script>alert('Licencia ya esta asignada a otro chofer.No se actualizo el registro');window.location.href=\"../modelo/Mantenimiento_Chofer.php\"</script>";
  	}
  	else{
  		$ChoferCollectorObj->updateChofer($codigo,$nombre,$apellido,$licencia,$categoria_lic,$numcelular1,$recordpolicial,$transportista);
- 		echo"<script>alert('Registro Actualizado con exito');window.location.href=\"../views/ChoferView.php\"</script>";
+ 		echo"<script>alert('Registro Actualizado con exito');window.location.href=\"../modelo/Mantenimiento_Chofer.php\"</script>";
  		}
 
 ?>
