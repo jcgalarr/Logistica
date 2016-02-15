@@ -42,10 +42,6 @@ foreach ($UserCollectorObj->showUser() as $c){
   <tr>
      <td><?php echo $c->getid() ?></td>
      <td><?php echo $c->getnombre() ?></td>
-     
-    
-     <td><a href="Bodega_edit.php?id=<?php echo $c->getcodigo() ?>">Editar</a></td>
-     <td><a href="Bodega_delete.php?id=<?php echo $c->getcodigo() ?>">Eliminar</a></td>
   </tr>
   </tbody> 
 <?php  
