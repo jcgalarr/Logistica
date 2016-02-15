@@ -1,5 +1,9 @@
 <?php
 session_start();
+include_once('puentemenu.php');
+ // echo "Menu1" . $_SESSION['usuario'];
+ // echo "Menu2" . $_SESSION['clave'];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,6 +49,8 @@ session_start();
             <li class="scroll"><a href="#services">Gestión</a></li> 
             <li class="scroll"><a href="#mant">Mantenimientos</a></li>                     
             <li class="scroll"><a href="NosotrosView.php">NOSOTROS </a></li>
+            <li class="scroll"><a href="salir.php">SALIR </a></li>
+           
             <!--<li class="scroll"><a href="#portfolio">Portfolio</a></li>-->
             <!--<li class="scroll"><a href="#team">Team</a></li>-->
             <!--<li class="scroll"><a href="#blog">Blog</a></li>-->      
@@ -56,13 +62,14 @@ session_start();
   
   <div class="text-right col-sm-12">            
            <?php  
-              $_SESSION["usuario"] = $_POST['usuario'];
+             $_SESSION["usuario"] = $_POST['usuario'];
               if (isset($_SESSION["usuario"])){
-             echo "<h3> Bienvenido: " . $_SESSION["usuario"] . " <a href='ViewMenu.php'> Salir </a></3>";
-              session_destroy();
+                echo "<h3> Bienvenido(a): " . $ObjUsuario->getnombre(); 
               }
              ?>
           </div>
+
+<section id="services">
     <div class="container">
       <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
         <div class="row">
@@ -85,26 +92,20 @@ session_start();
               <p>Mediante ésta opción se procederá a realizar la Solicitud de Despacho</p>
             </div>
           </div>
-          <div class="col-sm-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="450ms">
+          
+<div class="col-sm-4 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="750ms">
             <div class="service-icon">
-              <i class="fa fa-shopping-cart"></i>
+              <i class="fa fa-user"></i>
             </div>
             <div class="service-info">
-              <a href="IncorpRecepMercView.php">Incorporación de Recepcion Mercadería</a>
-			  <!--<h3>Compra</h3>-->
-              <p>Mediante ésta opción se procederá a gestionar la Incorporación de Recepción de la Mercadería</p>
+			  <a href="ColaReposicionView.php">Almacenamiento de Mercadería</a>
+              <!--<h3>Devolución de Mercadería</h3>-->
+              <p>Mediante ésta opción se procederá a realizar el respectivo almacenamiento de la Mercadería</p>
             </div>
           </div>
-          <div class="col-sm-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="550ms">
-            <div class="service-icon">
-              <i class="fa fa-barcode"></i>
-            </div>
-            <div class="service-info">
-              <a href="ControlEntradasView.php">Recepción de Mercadería</a>
-			  <!--<h3>Ingreso de Bodega</h3>-->
-              <p>Mediante ésta opción se procederá a realizar la respectiva Recepción de la Mercadería</p>
-            </div>
-          </div>
+
+
+          
           <div class="col-sm-4 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="650ms">
             <div class="service-icon">
               <i class="fa fa-share-square"></i>
@@ -115,31 +116,18 @@ session_start();
               <p>Mediante ésta opción se procederá a realizar el despacho/entrega de la Mercadería</p>
             </div>
           </div>
+          
+
+
           <div class="col-sm-4 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="750ms">
-            <div class="service-icon">
-              <i class="fa fa-user"></i>
-            </div>
-            <div class="service-info">
-			  <a href="ColaReposicionView.php">Almacenamiento de Mercadería</a>
-              <!--<h3>Devolución de Mercadería</h3>-->
-              <p>Mediante ésta opción se procederá a realizar el respectivo almacenamiento de la Mercadería</p>
-            </div>
-          </div>
-          <div class="col-sm-4 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="750ms">
-            <div class="service-icon">
-              <i class="fa fa-user"></i>
-            </div>
-            <div class="service-info">
-			  <a href="CargaCamionesView.php">Carga a Camión de la Mercadería</a>
-              <!--<h3>Devolución de Mercadería</h3>-->
-              <p>Mediante ésta opción se procederá a registrar la Mercadería que se carga en el Camión</p>
-            </div>
-          </div>		  
+           
+          </div>	
+	  
         </div>
       </div>
     </div>
  
-
+  </section>
   <section id="mant">
     <div class="container">
       <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
@@ -186,8 +174,11 @@ session_start();
             <div class="service-icon">
               <i class="fa fa-share-square"></i>
             </div>
+
+
+
             <div class="service-info">
-			  <a href="../modelo/Transportista_list.php">Transportista</a>
+			  <a href="TransportistaView.php">Transportista</a>
               <!--<h3>Despacho de Mercadería</h3>-->
               <p>Mediante ésta opción se procederá a realizar el mantenimiento de los Transportistas</p>
             </div>
@@ -221,7 +212,44 @@ session_start();
               <!--<h3>Devolución de Mercadería</h3>-->
               <p>Mediante ésta opción se procederá a realizar el mantenimiento de los Camiones</p>
             </div>
-          </div>		  
+          </div>
+
+          <div class="col-sm-4 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="850ms">
+            <div class="service-icon">
+              <i class="fa fa-users"></i>
+            </div>
+            <div class="service-info">
+			  <a href="CargoView.php">Cargo</a>
+              <!--<h3>Devolución de Mercadería</h3>-->
+              <p>Mediante ésta opción se procederá a realizar el mantenimiento de los Cargos</p>
+            </div>
+          </div>
+
+
+        <div class="col-sm-4 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="850ms">
+            <div class="service-icon">
+              <i class="fa fa-users"></i>
+            </div>
+            <div class="service-info">
+			  <a href="DepartamentoView.php">Departamento</a>
+              <!--<h3>Devolución de Mercadería</h3>-->
+              <p>Mediante ésta opción se procederá a realizar el mantenimiento de los Departamento</p>
+            </div>
+          </div>
+
+
+<div class="col-sm-4 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="850ms">
+            <div class="service-icon">
+              <i class="fa fa-truck"></i>
+            </div>
+            <div class="service-info">
+			  <a href="BodegaView.php">Bodega</a>
+              <!--<h3>Devolución de Mercadería</h3>-->
+              <p>Mediante ésta opción se procederá a realizar el mantenimiento de los Bodega</p>
+            </div>
+          </div>
+
+		  
         </div>
       </div>
     </div>
@@ -252,4 +280,3 @@ session_start();
   <script type="text/javascript" src="../js/main.js"></script>
  </body>
 </html>
-  

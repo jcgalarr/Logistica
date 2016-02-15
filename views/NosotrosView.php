@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,10 +65,11 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">                 
-            <li class="scroll active"><a href="ViewMenu.html">Inicio</a></li>
-            <li class="scroll"><a href="ViewMenu.html">Gestión</a></li> 
-            <li class="scroll"><a href="ViewMenu.html">Mantenimientos</a></li>                     
-            <li class="scroll"><a href="NosotrosView.php">Nosotros</a></li>       
+            <li class="scroll active"><a href="ViewMenu.php">Inicio</a></li>
+            <li class="scroll"><a href="ViewMenu.php">Gestión</a></li> 
+            <li class="scroll"><a href="ViewMenu.php">Mantenimientos</a></li>                     
+            <li class="scroll"><a href="NosotrosView.php">Nosotros</a></li>
+            <li class="scroll"><a href="salir.php">SALIR </a></li>         
           </ul>
         </div>
       </div>

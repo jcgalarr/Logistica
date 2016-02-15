@@ -1,6 +1,9 @@
 <?php
 session_start();
+
 ?>
+
+
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -40,99 +43,22 @@ session_start();
 		  		  return resultado;
 		  }//end cargarAccionLogin
 
-		  function validaEnter(texto,evento) {
-			tecla = (document.all) ? evento.keyCode : evento.which;
-			if (tecla==13){
-				if (texto=="usuario"){
-				  if (document.frm.txt_usuario.value==''){
-					  alert('Ingrese Usuario');
-					  document.frm.txt_usuario.focus();
-					  return false;
-				  }//end if
-				  document.frm.txt_passwd.focus();
-				}else{ if (texto=="passwd"){
-						  if (document.frm.txt_passwd.value==''){
-							  alert('Ingrese Passwd');
-							  document.frm.txt_passwd.focus();
-							  return false;
-						  }//end if
-						  resultado = cargarAccionLogin(document.frm.txt_usuario.value,document.frm.txt_passwd.value);
-						  //alert(resultado);
-						 if (resultado == "1"){
-							/*var opciones="toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes";
-							url = '/Index/inicio/';
-							popupWin = window.open(url, name, opciones);*/
-							/*var v = window.self;
-							v.opener = window.self;
-							v.close();*/
-	  						document.frm.action = '/Index/inicio/';
-							document.frm.submit();
-						  }else{
-						  	if (resultado == "2"){
-							  	alert('Debe actualizar la clave');
-								document.frm.action = '/Menu/nuevaclave/user/'+document.frm.txt_usuario.value+'/valor/'+2;
-								document.frm.submit();
-							}else{
-								if (resultado == "3"){
-									alert('Debe actualizar la clave');
-									document.frm.action = '/Menu/nuevaclave/user/'+document.frm.txt_usuario.value+'/valor/'+3;
-									document.frm.submit();
-								}else{
-									if (resultado == "4"){
-										document.frm.action = '/Recepcion/menugarita/';
-										document.frm.submit();
-									}else{
-										alert('Usuario o clave incorrecta');
-							  	 		document.frm.txt_usuario.focus();
-								 		document.frm.txt_usuario.value = '';
-								 		document.frm.txt_passwd.value = '';
-									}//end if
-								}//end if
-						  	}//end if
-						 }//endif
-					 }//endif
-				}//endif
-			}//endif
-		  }//end function validarEnter
-
+		 
 		  function buttonlogin() {
-			  if (document.frm.txt_usuario.value==''){
+                            // alert(document.getElementById("usuario").value);
+			  if (document.getElementById("usuario").value==''){
 				  alert('Ingrese Usuario');
-				  document.frm.txt_usuario.focus();
+				  document.getElementById("usuario").focus();
 				  return false;
 			  }//end if
-			  if (document.frm.txt_passwd.value==''){
+			  if (document.getElementById("clave").value==''){
 				  alert('Ingrese Passwd');
-				  document.frm.txt_passwd.focus();
+				 document.getElementById("clave").focus();
 				  return false;
 			  }//end if
-			  resultado = cargarAccionLogin(document.frm.txt_usuario.value,document.frm.txt_passwd.value);
-			  if (resultado == "1"){
-				document.frm.action = '/Index/inicio/';
-				document.frm.submit();
-			 }else{
-			 	if (resultado == "2"){
-						alert('Debe actualizar la clave');
-						document.frm.action = '/Menu/nuevaclave/user/'+document.frm.txt_usuario.value+'/valor/'+2;
-						document.frm.submit();
-				}else{
-						if (resultado == "3"){
-							document.frm.action = '/Menu/nuevaclave/user/'+document.frm.txt_usuario.value+'/valor/'+3;
-							document.frm.submit();
-						}else{
-							if (resultado == "4"){
-								document.frm.action = '/Recepcion/menugarita/';
-								document.frm.submit();
-							}else{
-								alert('Usuario o clave no existe');
-					  	 		document.frm.txt_usuario.focus();
-						 		document.frm.txt_usuario.value = '';
-						 		document.frm.txt_passwd.value = '';
-							}//end if
-						}//end if
-				}//end if
-			  }//endif
-		  }//end function buttonlogin
+                       //end function buttonlogin
+                        document.frmlogin.submit();
+	          }
 
 		  function cancela(){
 		  					document.frm.txt_usuario.focus();
@@ -152,21 +78,21 @@ session_start();
 	  <h4>Bienvenidos al Sistema de Gestion Logistica (SGL).<br>
 		Ingrese su usuario y clave.<br></h4>
 	  </div>
-	  <form action="ViewMenu.php" method = "post">
+	  <form action="ViewMenu.php" id="frmlogin" name="frmlogin"  method = "post">
       <div class="login__form">
         <div class="login__row">
           <svg class="login__icon name svg-icon" viewBox="0 0 20 20">
             <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8"></path>
           </svg>
-          <input name="usuario" type="text" class="login__input name" placeholder="Usuario">
+          <input id="usuario" name="usuario" type="text" class="login__input name" placeholder="Usuario">
         </div>
         <div class="login__row">
           <svg class="login__icon pass svg-icon" viewBox="0 0 20 20">
             <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,8 a6,8 0 0,1 12,0"></path>
           </svg>
-          <input name="clave" type="password" class="login__input pass" placeholder="Clave">
+          <input id="clave" name="clave" type="password" class="login__input pass" placeholder="Clave">
         </div>
-		 <button name="login" class="login__submit">Login</button>
+		 <button type="button" onclick="buttonlogin()" name="login" class="login__submit">Login</button>
       </div>
     </form>
     </div>

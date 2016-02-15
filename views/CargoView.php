@@ -1,9 +1,9 @@
 <?php
  session_start();
 
- include_once('../modelo/Departamento.php');
- include_once('../modelo/DepartamentoCollector.php');
- $DepartamentoCollectorObj = new DepartamentoCollector();
+ include_once('../modelo/Cargo.php');
+ include_once('../modelo/CargoCollector.php');
+ $CargoCollectorObj = new CargoCollector();
 
 ?>
 
@@ -25,11 +25,11 @@
     <input  type="button" value="Menú" OnClick="window.location='../views/ViewMenu.php'" class="btn btn-primary" class="">
   </div>
    <div class="page-header">
-       <h1>Departamento</h1>
+       <h1>Cargo</h1>
     </div>
   
 
-   <form id="frm_dep" name="frm_dep" action ="../modelo/Departamento_insert.php" method ="post" class="form-horizontal">
+   <form id="frm_cargo" name="frm_cargo" action ="../modelo/Cargo_insert.php" method ="post" class="form-horizontal">
     
     <div class="form-group">
         <label class="control-label col-xs-3">Descripcion:</label>
@@ -43,7 +43,7 @@
         <div class="col-xs-offset-3 col-xs-9">
             <input type="button" OnClick="insertar()" class="btn btn-primary" value="Ingresar">
             <input type="reset" class="btn btn-primary" value="Limpiar">
-	    <input type="button" value="Consulta Masiva" OnClick="window.location='../modelo/Departamento_list.php'" class="btn btn-primary">	
+	    <input type="button" value="Consulta Masiva" OnClick="window.location='../modelo/Cargo_list.php'" class="btn btn-primary">	
            	
 			
         </div>
@@ -59,7 +59,7 @@
         
 
         if (document.getElementById("txtdescripcion").value!="") {
-                             document.frm_dep.submit(); 
+                             document.frm_cargo.submit(); 
                          } else {
                           alert('Campo Descripcion  es Obligatorio!');
                           document.getElementById("txtdescripcion").focus();
