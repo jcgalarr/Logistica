@@ -33,7 +33,7 @@ class CamionCollector extends conexion
   }
 
   function insertCamion($placa,$anio,$marca,$tipo,$tonelaje,$cadies,$pallets,$tipocombustible,$cod_chofer,$cod_transportista) {
-    echo $placa .$anio .$marca .$tipo .$tonelaje .$cadies .$pallets .$tipocombustible .$cod_chofer .$cod_transportista;
+    //echo $placa .$anio .$marca .$tipo .$tonelaje .$cadies .$pallets .$tipocombustible .$cod_chofer .$cod_transportista;
     $new_row = self::$db->getRow("Insert into camion (placa,anio,marca,tipo,tonelaje,cadies,pallets,tipocombustible,cod_chofer,cod_transportista) values ('$placa','$anio','$marca','$tipo','$tonelaje','$cadies','$pallets','$tipocombustible','$cod_chofer','$cod_transportista')");
  return 1;               
   }
