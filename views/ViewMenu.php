@@ -117,10 +117,18 @@ include_once('puentemenu.php');
             </div>
           </div>
           
+        
 
 
           <div class="col-sm-4 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="750ms">
-           
+           <div class="service-icon">
+              <i class="fa fa-share-square"></i>
+            </div>
+            <div class="service-info">
+			  <a href="DespachoView.php">Carga de camiones</a>
+              <!--<h3>Despacho de Mercadería</h3>-->
+              <p>Mediante ésta opción se procederá a realizar la carga de camiones</p>
+            </div>
           </div>	
 	  
         </div>
