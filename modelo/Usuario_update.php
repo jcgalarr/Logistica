@@ -17,7 +17,8 @@
  $UsuarioCollectorObj = new UsuarioCollector();
  $ObjUsuario = $UsuarioCollectorObj->validaCedula($cedula);
  
- if ( $ObjUsuario->getcedula() != '') {
+ 
+ if ( $ObjUsuario->getcodigo() != $codigo ) {
 	echo"<script>alert('Cédula ya existe!');window.location.href=\"../views/UsuaView.php\"</script>";		
 	}
 	else {
