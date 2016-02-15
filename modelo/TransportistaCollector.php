@@ -1,5 +1,5 @@
 <?php		
-
+session_start();
 include_once('Transportista.php');
 include_once('conexion.php');
 
@@ -18,15 +18,14 @@ class TransportistaCollector extends conexion
   }
  
   function showTransportistaId($id) {
-    //echo $id;
+    	//echo $id;
     $row = self::$db->getRow("SELECT * FROM transportista where ruc = '$id'");   
     //print_r ($row);     
     $Transportista = new Transportista($row{'ruc'},$row{'nombre'},$row{'direccion'},$row{'telefono1'},$row{'telefono2'},$row{'numcelular1'},$row{'numcelular2'});
-    return $Transportista;        
+    //print_r($Transportista);
+    return $Transportista;   
+     
   }
-
-
- 
 
 
   function updateTransportista($ruc,$nombre,$direccion,$telefono1,$telefono2,$numcelular1,$numcelular2) {

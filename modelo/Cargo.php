@@ -4,13 +4,14 @@ class Cargo
 {
     private $codigo;
     private $descripcion;
-   
-    function __construct($codigo,$descripcion) {
+  
+    function __construct($codigo, $descripcion) {
        $this->codigo = $codigo;
        $this->descripcion = $descripcion;
-     
+       
      }
 
+   
      function setcodigo($codigo){
        $this->codigo = $codigo;
      }
@@ -27,6 +28,9 @@ class Cargo
        return $this->descripcion;
      } 
 
+   
+       
+ 
 }
 
 ?> 

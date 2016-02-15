@@ -25,28 +25,28 @@
 	<div class="page-header">
        <h1>Transportista</h1>
     </div>
-   <form action ="../modelo/Transportista_update.php" method ="post" class="form-horizontal">
+   <form id="frm_trans" name="frm_trans" action ="../modelo/Transportista_update.php" method ="post" class="form-horizontal">
  
        
 
     <div class="form-group">
         <label class="control-label col-xs-3" >Ruc:</label>
         <div class="col-xs-2">
-            <input type="tel"  name="txtruc"  class="form-control" value = "<?php echo $ObjTransportista->getruc(); ?>">
+            <input type="tel" onkeypress="return ValidNumber(event);" name="txtruc" id="txtruc" class="form-control" value = "<?php echo $ObjTransportista->getruc(); ?>">
     
         </div>
     </div>
     <div class="form-group">
         <label class="control-label col-xs-3">Nombre:</label>
         <div class="col-xs-9">
-            <input type="text"  name="txtnombre"   class="form-control" value = "<?php echo $ObjTransportista->getnombre(); ?>">
+            <input type="text"  name="txtnombre" id="txtnombre"    class="form-control" value = "<?php echo $ObjTransportista->getnombre(); ?>">
         </div>
     </div>
     
 	<div class="form-group">
         <label class="control-label col-xs-3" >Dirección:</label>
         <div class="col-xs-9">
-            <input type="text"  name="txtdireccion"   class="form-control" value = "<?php echo $ObjTransportista->getdireccion(); ?>">
+            <input type="text"  name="txtdireccion" id="txtdireccion"   class="form-control" value = "<?php echo $ObjTransportista->getdireccion(); ?>">
         </div>
     </div>
     
@@ -54,11 +54,11 @@
 	<div class="form-group">
         <label class="control-label col-xs-3" >Telefono 1:</label>
         <div class="col-xs-2">
-            <input type="tel" name="txttel1" class="form-control" value = "<?php echo $ObjTransportista->gettelefono1(); ?>">
+            <input type="tel" onkeypress="return ValidNumber(event);" id="txttel1" name="txttel1" class="form-control" value = "<?php echo $ObjTransportista->gettelefono1(); ?>">
         </div>
 		<label class="control-label col-xs-2" >Telefono 2:</label>
 		<div class="col-xs-2">
-            <input type="tel" name="txttel2"class="form-control"  value = "<?php echo $ObjTransportista->gettelefono2(); ?>">
+            <input type="tel" onkeypress="return ValidNumber(event);" id="txttel2" name="txttel2" class="form-control"  value = "<?php echo $ObjTransportista->gettelefono2(); ?>">
         </div>
     </div>
 	
@@ -66,11 +66,11 @@
 	<div class="form-group">
         <label class="control-label col-xs-3" >Celular 1:</label>
         <div class="col-xs-2">
-            <input type="tel"  name="txtcelular1"   class="form-control"  value = "<?php echo $ObjTransportista->getnumcelular1(); ?>">
+            <input type="tel"  name="txtcelular1" id="txtcelular1"  class="form-control"  value = "<?php echo $ObjTransportista->getnumcelular1(); ?>">
         </div>
 		<label class="control-label col-xs-2" >Celular 2:</label>
         <div class="col-xs-2">
-            <input type="tel" name="txtcelular2" class="form-control" value = "<?php echo $ObjTransportista->getnumcelular2(); ?>">
+            <input type="tel" onkeypress="return ValidNumber(event);" name="txtcelular2" id="txtcelular2" class="form-control" value = "<?php echo $ObjTransportista->getnumcelular2(); ?>">
         </div>
     </div>
 	
@@ -80,9 +80,9 @@
     <br>
     <div class="form-group">
         <div class="col-xs-offset-3 col-xs-9">
-            <input type="submit" class="btn btn-primary" value="Actualizar">
+            <input type="button" OnClick="mensaje()" class="btn btn-primary" value="Actualizar">
             <input type="reset" class="btn btn-primary" value="Limpiar">
-	    <input type="button" value="Regresar" OnClick="Ira()" class="btn btn-primary">		
+	    <input type="button" value="Regresar" OnClick="window.location='Transportista_list.php'" class="btn btn-primary">		
 			
         </div>
     </div>
@@ -93,14 +93,49 @@
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="../js/responsive.js"></script>
     <script src="../js/bootstrap.min.js"></script>
-
+<script language ="javascript" type = "text/javascript" src= "../js/funcionesgenerales.js"></script>
 
 
 <script>
-      	function Ira(){
-			window.open("Transportista_list.php");
-		}
-		    </script>
+      function mensaje(){
+        //alert('Registro actualizado exitosamente!');
+        //submit();
+       if (document.getElementById("txtruc").value!="") {
+            if (document.getElementById("txtnombre").value!="") {
+                if (document.getElementById("txtdireccion").value!="") {
+                    if (document.getElementById("txttel1").value!="") {
+                            //alert('Grabado exitosamente!');
+                             document.frm_trans.submit(); 
+                         } else {
+                          alert('Campo Telefono 1 es Obligatorio!');
+                          document.getElementById("txttel1").focus();
+                          return false;         
+                        }
+                    }
+                        else
+                        {
+                              alert('Campo Direccion es Obligatorio!');
+                          document.getElementById("txtdireccion").focus();
+                          return false;         
+                        }
+                    }
+                      else
+                        {
+                              alert('Campo Nombre es Obligatorio!');
+                          document.getElementById("txtnombre").focus();
+                          return false;         
+                        }
+                        }  
+                         else
+                        {
+                              alert('Campo ruc  es Obligatorio!');
+                          document.getElementById("txtruc").focus();
+                          return false;         
+                        }  
+
+    }
+		    
+</script>
 </body>
 </html>
 

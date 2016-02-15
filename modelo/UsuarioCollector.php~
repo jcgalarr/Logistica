@@ -6,16 +6,6 @@ include_once('conexion.php');
 class UsuarioCollector extends conexion
 {
   
-  function validarcontrasena($login,$clave) {
-   
-    $row = self::$db->getRow("SELECT * FROM usuario where login = '$login' and contrasena = '$clave'");   
-    $Usuario = new Usuario($row{'codigo'},$row{'nombre'},$row{'apelido'},$row{'cargo'},$row{'departamento'},$row{'bodega'},$row{'cedula'},$row{'estado'},$row{'tipousu'});
-    //echo("entroValida" .$login .$clave);
-    //echo($Usuario);
-    return $Usuario;        
-  }
-
-
   function showUsuario() {
     $rows = self::$db->getRows("SELECT * FROM usuario ");        
     $arrayUsuario= array();        

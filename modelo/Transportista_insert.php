@@ -12,27 +12,21 @@
  $celular2 = $_POST['txtcelular2'];
  
  $TransportistaCollectorObj = new TransportistaCollector();
- $TransportistaCollectorObj->insertTransportista($ruc,$nombre,$direccion,$telefono1,$telefono2,$celular1,$celular2);
+//echo($ruc);
+ $ObjTransportista = $TransportistaCollectorObj->showTransportistaId($ruc);
+ //print_r($ObjTransportista->getruc());
 
+ if ( $ObjTransportista->getruc() != '')
+ {
+	echo"<script>alert('Ruc ya existe');window.location.href=\"../views/TransportistaView.php\"</script>";		
+	}
+else
+ {
+	$TransportistaCollectorObj->insertTransportista($ruc,$nombre,$direccion,$telefono1,$telefono2,$celular1,$celular2);
+        // header("location: ../views/TransportistaView.php");  
+         echo"<script>alert('Registro Grabado con exito');window.location.href=\"../views/TransportistaView.php\"</script>";
+	}
+
+	
 ?>
-<!doctype html>
-<html lang="es">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width; initial-scale=1.0"> 
-<title>Sistema SGL</title>
-    <!-- Estilos CSS vinculados -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-   
-   <h3>Ingresado Exitosamente</h3>
-   </head>
-<body>
-  
-      <form action="Transportista_list.php" method="Post">
-         <div>
-         <input type="submit" class="btn btn-primary" name="Regresar al inicio" value="Retornar">
-         </div>
 
-      </form>
-   </body>
-</html>

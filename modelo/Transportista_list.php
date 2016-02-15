@@ -19,7 +19,7 @@ include_once("TransportistaCollector.php");
 <header>
     <h1>Mantenimiento Transportista</h1>
 </header>
-<a href="../views/TransportistaView.php">Nuevo</a>
+<a class="btn btn-primary"  href="../views/TransportistaView.php">Nuevo</a>
 
 <br/>
 <br/>
@@ -61,6 +61,11 @@ foreach ($TransportistaCollectorObj->showTransportista() as $c){
 }
 ?>
 </table>
+</div>
+     <div class="col-xs-offset-3 col-xs-7">
+     <input type="button" value="Regresar" OnClick="window.location='../views/TransportistaView.php'" class="btn btn-primary">   
+     </div>
+</div>
 </div>
 </body>
 </html>
