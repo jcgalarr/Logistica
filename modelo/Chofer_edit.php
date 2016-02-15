@@ -26,7 +26,7 @@ $TransportistaCollectorObj = new TransportistaCollector();
     <div class="page-header">
        <h1>Edición de Choferes</h1>
     </div>
-   <form class="form-horizontal" action ="../modelo/Chofer_insert.php" method ="post">
+   <form class="form-horizontal" id="frm_chofer" name="frm_chofer"  action ="../modelo/Chofer_update.php" method ="post">
     <div class="form-group">
         <label class="control-label col-xs-3">Código</label>
         <div class="col-xs-9">
@@ -98,7 +98,7 @@ $TransportistaCollectorObj = new TransportistaCollector();
     <br>
     <div class="form-group">
         <div class="col-xs-offset-3 col-xs-9">
-            <input type="submit" class="btn btn-primary" OnClick="mensaje()"  value="Actualizar">
+            <input type="button" class="btn btn-primary" OnClick="mensaje()"  value="Actualizar">
             <input type="reset" class="btn btn-primary" value="Limpiar">
             <input type="button" value="Regresar" OnClick="history.back()" class="btn btn-primary">   
         </div>
@@ -106,8 +106,9 @@ $TransportistaCollectorObj = new TransportistaCollector();
   </form>
 </div>
     <script > function mensaje(){
-        alert('Registro actualizado exitosamente!');
-        submit();
+        //alert('Registro actualizado exitosamente!');
+        //alert('Entro!');
+        document.frm_chofer.submit();
     }
     </script>
 <!-- Js vinculados -->
